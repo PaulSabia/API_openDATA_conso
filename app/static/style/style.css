@@ -1,0 +1,130 @@
+/* Charts */
+.highcharts-figure, .highcharts-data-table table {
+    min-width: 310px; 
+    max-width: 800px;
+    margin: 1em auto;
+  }
+  
+  #container {
+    height: 400px;
+  }
+  
+  .highcharts-data-table table {
+      font-family: Verdana, sans-serif;
+      border-collapse: collapse;
+      border: 1px solid #EBEBEB;
+      margin: 10px auto;
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+  }
+  .highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+  }
+  .highcharts-data-table th {
+      font-weight: 600;
+    padding: 0.5em;
+  }
+  .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+  }
+  .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+  }
+  .highcharts-data-table tr:hover {
+    background: #f1f7ff;
+  }
+
+/* Page Index */
+body{
+  height: 100vh;
+  color: #7f5539;
+}
+.index{
+  width: 100%;
+  height: 95%;
+  box-sizing: border-box;
+  border-radius: 0 0 25% 25%;
+  background-color:#e6ccb2;
+  box-shadow: -0px 5px 10px -10px black;
+  text-align: center;
+}
+.index_effect{
+  top: 56px;
+  position: absolute;
+  width: 100%;
+  height: 95%;
+  box-sizing: border-box;
+  background-color: #ede0d4;
+  opacity: 0.66;
+  z-index: -1;
+  border-bottom-right-radius: 10% 15%;
+  border-bottom-left-radius: 10% 15%;
+  box-shadow: -0px 5px 10px -5px black;
+}
+.title_index{
+  text-align: center;
+  font-family: 'Barlow', sans-serif;
+  font-size: 70px;
+  padding-top: 10%;
+}
+.index a{
+  width: 25%;
+  display: inline-block;
+  margin: 25px auto;
+  text-align: center;
+  padding: 15px 20px;
+  border: 1px solid #7f5539;
+  font-size: 25px;
+  text-decoration: none;
+  color: #7f5539;
+  background-color: #ede0d4;
+  border-radius: 10px;
+}
+.index a:hover{
+  background-color: #ddb892;
+  color: #ede0d4;
+  border: 1px solid #ede0d4;
+  box-shadow: -0px 5px 10px -5px black;
+}
+
+/* Page Recherche & consommation*/
+.title-recherche{
+  margin-top: 50px;
+  text-align: center;
+  font-size: center;
+}
+.section_recherche{
+  width: 100%;
+  margin: 30px auto;
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+}
+.div_recherche{
+  flex: 0 0 30%;
+}
+.sous_div_recherche>button{
+  background-color: #ede0d4;
+}
+.sous_div_recherche>button, select {
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+}
+
+/* Page réponse Consommation */
+.conso_filiere, .conso_region{
+  font-size: 1.5em;
+}
+.conso_filiere{
+  color: yellowgreen;
+}
+.conso_region{
+  color: brown;
+}
+.conso_para{
+  font-size: 2.5em;
+}

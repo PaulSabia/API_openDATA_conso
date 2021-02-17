@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <form method="post">
+        <div>
+            <h3>id : {{ response['recordid'] }}</h3>
+            <p>Filière : {{ response.fields['filiere'] }}</p>
+            <p>Région : {{ response.fields['libelle_region'] }}</p>
+            <p>Département : {{ response.fields['libelle_departement'] }}</p>
+            <p>Commune : {{ response.fields['libelle_commune'] }}</p>
+            <p>Opérateur : {{ response.fields['operateur'] }}</p>
+            <p>Consommation : {{ response.fields['conso'] }} <span>kwH</span></p>
+            <p>Date : {{ response['record_timestamp'] }}</p>
+        </div>
+        <label for="">Consommation : <input type="text" name='conso' value="{{response.fields['conso'] or request.form['conso']}}" placeholder="{{response.fields['conso']}}">kwh</label>
+        <div>
+            <button type="submit" class="btn btn-primary">Modifier</button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

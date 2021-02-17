@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="title-recherche">Voir la consommation de ...</h2>
+
+<form method="POST" class="section_recherche">
+
+    <div class="div_recherche">
+        <input type="radio" id="filiere" name="choix" value="filiere" onclick="javascript:filiereCheck();">
+        <label>Une filière</label>
+        <div id="filiere_check" style="display: none;" class="sous_div_recherche">
+            
+            <input type="radio" name="filiere" value="Gaz">
+            <label for="">Gaz</label>
+            
+            <input type="radio" name="filiere" value="Electricité">
+            <label for="">Electricité</label>
+
+            <button type="submit">Valider</button>
+        </div>
+    </div>
+
+    <div class="div_recherche">
+        <input type="radio" id="region" name="choix" value="region" onclick="javascript:regionCheck();" >
+        <label>Une region</label>
+        <div id="region_check" style="display: none;" class="sous_div_recherche">
+            <select name="regions">
+                {% for reg in listeRegions :%}
+                <option>{{ reg }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Valider</button>
+        </div>
+    </div>
+
+    <div class="div_recherche">
+        <input type="radio" id="both" name="choix" value="both" onclick="javascript:bothCheck();" >
+        <label>Les deux</label>
+        <div id="both_check" style="display: none;" class="sous_div_recherche">
+
+            <input type="radio" name="filiere2" value="Gaz">
+            <label for="">Gaz</label>
+            
+            <input type="radio" name="filiere2" value="Electricité">
+            <label for="">Electricité</label>
+
+            <select name="regions2">
+                {% for reg in listeRegions :%}
+                <option>{{ reg }}</option>
+                {% endfor %}
+            </select>
+            
+            <button type="submit">Valider</button>
+        </div>
+    </div>
+</form>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script>
+    var gaz = {{ gaz|safe }}
+    var elec = {{ elec|safe }}
+    var region = {{ region|safe }}
+</script>
+
+<div class="container_charts">
+    <figure class="highcharts-figure">
+        <div id="container"></div>
+    </figure>
+</div>
+
+
+<script type="text/javascript" src="static/js/main.js"></script>
+{% endblock %}

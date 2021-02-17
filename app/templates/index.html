@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="index">
+    <h1 class="title_index"> Bienvenue sur notre portail OPEN DATA </h1>
+    <a href="{{url_for('recherche')}}">Recherche</a>
+    <a href="{{url_for('consommation')}}">Consommation</a>
+</section>
+<div class="index_effect"></div>
+
+
+{% endblock %}

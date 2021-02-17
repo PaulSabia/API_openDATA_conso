@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table id="result_search">
+        <tr id="result_search2">
+            <th>Record id</th>
+            <th>Filière</th>
+            <th>Region</th>
+            <th>Département</th>
+            <th>Commune</th>
+            <th>Opérateur</th>
+            <th>Consommation (kwh)</th>
+            <th>Date</th>
+            <th>Update</th>
+        </tr>
+        {% for elem in response :%}
+        <tr id="content_search2">
+            <td id="content_search">{{ elem['recordid'] }}</td>
+            <td>{{ elem.fields['filiere'] }}</td>
+            <td>{{ elem.fields['libelle_region'] }}</td>
+            <td>{{ elem.fields['libelle_departement'] }}</td>
+            <td>{{ elem.fields['libelle_commune'] }}</td>
+            <td>{{ elem.fields['operateur'] }}</td>
+            <td>{{ elem.fields['conso'] }}</td>
+            <td>{{ elem['record_timestamp'] }}</td>
+            <td><a href="{{ url_for('update', recordid=elem['recordid']) }}">Modifier</a> / <a href="{{ url_for('delete', recordid=elem['recordid']) }}">Supprimer</a></p></td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

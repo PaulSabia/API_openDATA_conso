@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for elem in response_conso: %}
+    <div class="conso_content">
+        <h2>Consommation <span class="conso_filiere">{{elem['_id']['filiere']}}</span> <span class="conso_region">{{elem['_id']['region']}}</span></h2>
+        <p class="conso_para"><span class="conso_value">{{elem['consommation']}}</span> kwh</p>
+    </div>
+    {% endfor %}
+{% endblock %}
